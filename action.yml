@@ -1,0 +1,20 @@
+name: "OX Block Mode (Dev)"
+description: "Testing GitHub Actions"
+inputs:
+  ox_host_url:
+    description: 'OX deployment URL'
+    required: true
+  ox_api_key:
+    description: 'API key generated from OX UI'
+    required: true
+  ox_timeout:
+    description: 'Timeout'
+    required: false
+    default: "20"
+  github_repository_id:
+    description: 'Repository ID set from context. Do not override'
+    required: false
+    default: ${{ github.repository_id }}
+runs:
+  using: "docker"
+  image: "docker://imbro/ox-block-mode:latest"
