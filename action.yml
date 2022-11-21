@@ -2,19 +2,23 @@ name: "OX Block Mode (Dev)"
 description: "Testing GitHub Actions"
 inputs:
   ox_host_url:
-    description: 'OX deployment URL'
+    description: 'OX Security deployment URL'
     required: true
   ox_api_key:
-    description: 'API key generated from OX UI'
+    description: 'API key generated from OX Security UI'
     required: true
   ox_timeout:
-    description: 'Timeout'
+    description: 'Timeout in minutes after which scan will be canceled. Whether the job will fail or not depends on ox_fail_on_timeout option.'
     required: false
     default: "20"
-  ox_should_fail_on_timeout:
-    description: 'Should fail on timeout'
+  ox_fail_on_timeout:
+    description: 'Whether or not to fail the job when it times out'
     required: false
-    default: "true"
+    default: "false"
+  ox_fail_on_error:
+    description: 'Whether or not to fail the job if an unrecoverable error occurs (i.e. network, infrastructure)'
+    required: false
+    default: "false"
   github_repository_id:
     description: 'Repository ID set from context. Do not override'
     required: false
