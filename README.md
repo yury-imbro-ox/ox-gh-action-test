@@ -6,7 +6,14 @@ You can use the Action as follows:
 
 ```yaml
 name: Example workflow with OX Security Scan
-on: push
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches:
+      - main
 jobs:
   security:
     runs-on: ubuntu-latest
