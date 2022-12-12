@@ -1,5 +1,8 @@
 name: "OX Security Scan (Dev)"
 description: "OX Security Scan as part of your GitHub Actions workflow."
+branding:
+  icon: check-circle
+  color: green
 inputs:
   ox_host_url:
     description: 'OX Security deployment URL.'
