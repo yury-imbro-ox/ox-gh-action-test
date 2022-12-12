@@ -1,36 +1,36 @@
-name: "OX Block Mode (Dev)"
-description: "Testing GitHub Actions"
+name: "OX Security Scan (Dev)"
+description: "OX Security Scan as part of your GitHub Actions workflow."
 inputs:
   ox_host_url:
-    description: 'OX Security deployment URL'
+    description: 'OX Security deployment URL.'
     required: true
   ox_api_key:
-    description: 'API key generated from OX Security UI'
+    description: 'API key generated from OX Security UI.'
     required: true
   ox_scan_full_branch:
-    description: 'If set to true, OX Security will scan the entire branch and not only the latest intoduced commits'
+    description: 'If set to true, OX Security will scan the entire branch and not only the latest introduced commits.'
     required: false
     default: "false"
   ox_override_blocking:
-    description: 'If set to true, OXSecurityScan task will not block the pipeline even if blocking issues are found'
+    description: 'If set to true, the step will not fail even if blocking issues are found.'
     required: false
     default: "false"
   ox_timeout:
-    description: 'Timeout in minutes after which scan will be canceled. Whether the job will fail or not depends on ox_fail_on_timeout option'
+    description: 'Timeout in minutes after which OX Security scan will be canceled. Whether the step will fail or not depends on `ox_fail_on_timeout` option.'
     required: false
     default: "20"
   ox_fail_on_timeout:
-    description: 'Whether or not to fail the job when it times out'
+    description: 'Whether or not the step will fail if it times out.'
     required: false
     default: "false"
   ox_fail_on_error:
-    description: 'Whether or not to fail the job if an unrecoverable error occurs (i.e. network, infrastructure)'
+    description: 'Whether or not the step will fail if an unrecoverable error occurs (i.e. network, infrastructure).'
     required: false
     default: "false"
   github_repository_id:
-    description: 'Repository ID set from context. Do not override'
+    description: 'Repository ID set from context. Do not override.'
     required: false
     default: ${{ github.repository_id }}
 runs:
   using: "docker"
-  image: "docker://imbro/ox-block-mode:latest"
+  image: "docker://oxsecurity/ox-block-mode:latest"
