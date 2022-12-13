@@ -42,10 +42,8 @@ Once you login to your OX Security account, an API key can be generated on the [
 If you want to scan the entire branch and not only the latest introduced commits, you can set `ox_scan_full_branch` to `"true"`. Default is `"false"`.
 
 ```yaml
-steps:
-  - name: Run OX Security Scan to check for vulnerabilities
-    with:
-      ox_scan_full_branch: "true"
+with:
+  ox_scan_full_branch: "true"
 ```
 
 ##### `ox_override_blocking`
@@ -53,10 +51,8 @@ steps:
 If you want the step not to fail even if blocking issues are found, you can set `ox_override_blocking` to `"true"`. Default is `"false"`.
 
 ```yaml
-steps:
-  - name: Run OX Security Scan to check for vulnerabilities
-    with:
-      ox_override_blocking: "true"
+with:
+  ox_override_blocking: "true"
 ```
 
 ##### `ox_timeout`
@@ -64,10 +60,8 @@ steps:
 Timeout in minutes after which OX Security scan will be canceled. Whether the step will fail or not depends on `ox_fail_on_timeout` option. Default is `20`.
 
 ```yaml
-steps:
-  - name: Run OX Security Scan to check for vulnerabilities
-    with:
-      ox_timeout: "20"
+with:
+  ox_timeout: "20"
 ```
 
 ##### `ox_fail_on_timeout`
@@ -75,10 +69,8 @@ steps:
 If you want the step to fail if scan times out, you can set `ox_fail_on_timeout` to `"true"`. Default is `"false"`.
 
 ```yaml
-steps:
-  - name: Run OX Security Scan to check for vulnerabilities
-    with:
-      ox_fail_on_timeout: "true"
+with:
+  ox_fail_on_timeout: "true"
 ```
 
 ##### `ox_fail_on_error`
@@ -86,8 +78,6 @@ steps:
 If you want the step to fail if an error occurs (i.e. network, infrastructure), you can set `ox_fail_on_error` to `"true"`. Default is `"false"`.
 
 ```yaml
-steps:
-  - name: Run OX Security Scan to check for vulnerabilities
-    with:
-      ox_fail_on_error: "true"
+with:
+  ox_fail_on_error: "true"
 ```
