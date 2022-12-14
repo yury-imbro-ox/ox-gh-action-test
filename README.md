@@ -45,7 +45,7 @@ You can modify the action's behavior with the inputs listed below. Workflow file
 
 Default: `false`
 
-To scan the entire branch and not only the latest introduced commits, set `ox_scan_full_branch` to `true`.
+To scan the entire branch and not only the latest introduced commits, set `ox_scan_full_branch` to `true`. Does not affect pull request scans.
 
 ```yaml
 with:
