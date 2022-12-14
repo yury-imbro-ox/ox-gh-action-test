@@ -5,29 +5,30 @@ branding:
   color: green
 inputs:
   ox_host_url:
-    description: 'OX Security deployment URL.'
-    required: true
+    description: 'OX Security application deployment URL.'
+    required: false
+    default: "https://api.cloud.ox.security"
   ox_api_key:
-    description: 'API key generated from OX Security UI.'
+    description: 'API key generated in the OX Security application.'
     required: true
   ox_scan_full_branch:
-    description: 'If set to true, OX Security will scan the entire branch and not only the latest introduced commits.'
+    description: 'To scan the entire branch and not only the latest introduced commits, set to `true`.'
     required: false
     default: "false"
   ox_override_blocking:
-    description: 'If set to true, the step will not fail even if blocking issues are found.'
+    description: 'To override a step failure on a blocking issue, set to `true`.'
     required: false
     default: "false"
   ox_timeout:
-    description: 'Timeout in minutes after which OX Security scan will be canceled. Whether the step will fail or not depends on `ox_fail_on_timeout` option.'
+    description: 'Timeout in minutes after which the OX Security scan will be canceled. If a timeout occurs, step failure will depend on the value of `ox_fail_on_timeout` option.'
     required: false
     default: "20"
   ox_fail_on_timeout:
-    description: 'Whether or not the step will fail if it times out.'
+    description: 'To have a scan timeout cause a step failure, set to `true`.'
     required: false
     default: "false"
   ox_fail_on_error:
-    description: 'Whether or not the step will fail if an unrecoverable error occurs (i.e. network, infrastructure).'
+    description: 'To have an error (i.e. network, infrastructure) cause a step failure, set to `true`.'
     required: false
     default: "false"
   github_repository_id:
